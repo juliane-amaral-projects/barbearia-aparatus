@@ -2,8 +2,9 @@ import Image from "next/image";
 import Header from "./_components/header";
 import SearchInput from "./_components/search-input";
 import banner from "../public/banner.png";
+import BookingItem from "./_components/booking-item";
 // import { prisma } from "@/lib/prisma";
-// import BarbershopItem from "./_components/barbershop-item";
+import BarbershopItem from "./_components/barbershop-item";
 // import Footer from "./_components/footer";
 // import {
 //   PageContainer,
@@ -15,7 +16,7 @@ import banner from "../public/banner.png";
 
 const Home = () => {
   return (
-    <div>
+    <main className="min-h-screen pb-20">
       <Header />
       <div className="px-5 space-y-4">
         <SearchInput />
@@ -25,8 +26,15 @@ const Home = () => {
             sizes="100vw"
             className="h-auto w-full"
           />
+          <h2 className="text-xs text-foreground font-semibold uppercase">Agendamentos</h2>
+          <BookingItem
+            serviceName="Corte de Cabelo"
+            barbershopName="Barbearia do Jorge"
+            barbershopImageUrl="https://utfs.io/f/e995db6d-df96-4658-99f5-11132fd931e1-17j.png"
+            date={new Date()}
+          />
       </div>
-    </div>
+    </main>
   );
 };
 
